@@ -39,7 +39,11 @@ describe('Test book routes', () => {
       .expect(201)
       .expect('Content-Type', /json/)
       .then((response) => {
-        const expected = { id: 1, url: 'https://jestjs.io', title: 'Jest' };
+        const expected = {
+          id: expect.any(Number),
+          url: 'https://jestjs.io',
+          title: 'Jest',
+        };
 
         expect(response.body).toEqual(expected);
         done();
