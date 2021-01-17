@@ -29,7 +29,6 @@ describe('Test book routes post', () => {
         const expected = { error: 'required field(s) missing' };
 
         expect(response.body).toEqual(expected);
-
         done();
       });
   });
@@ -90,4 +89,6 @@ describe('Test book routes get', () => {
         done();
       });
   });
+
+  afterAll((done) => connection.end(done));
 });
